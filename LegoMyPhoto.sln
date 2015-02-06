@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoMyPhoto", "LegoMyPhoto\LegoMyPhoto.csproj", "{EEDC4A72-CDD5-4D4A-813E-4C89B0A53B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoMyPhoto.Tests", "LegoMyPhoto.Tests\LegoMyPhoto.Tests.csproj", "{1CA563F2-49D9-41B6-ABCF-D918ABFCE4B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEDC4A72-CDD5-4D4A-813E-4C89B0A53B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEDC4A72-CDD5-4D4A-813E-4C89B0A53B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEDC4A72-CDD5-4D4A-813E-4C89B0A53B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEDC4A72-CDD5-4D4A-813E-4C89B0A53B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA563F2-49D9-41B6-ABCF-D918ABFCE4B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA563F2-49D9-41B6-ABCF-D918ABFCE4B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA563F2-49D9-41B6-ABCF-D918ABFCE4B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA563F2-49D9-41B6-ABCF-D918ABFCE4B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
