@@ -1,0 +1,20 @@
+﻿@model LegoMyPhoto.Models.SearchPhotoPack
+
+@{
+    ViewBag.Title = "Download";
+}
+
+<h2>@Model.PhotoName</h2>
+<h3>Right click to save or set as background</h3>
+<ul class="buttonation" style="margin:0 auto;">
+    @if (Model.Original)
+    {
+    <li><a href="/Upload/Custom?file=@Model.newFileName&name=@Model.PhotoName&path=@Model.savedPath&saved=true">Customize</a></li> }
+    <li><a href="/MyPhotos/Delete?deletedid=@Model.Id&returnUrl=@ViewBag.returnDownloadUrl">Delete</a></li>
+    <li><a href="/MyPhotos/Rename?renameId=@Model.Id&returnUrl=@ViewBag.returnDownloadUrl">Rename</a></li>
+    <li><a href="/MyPhotos/@ViewBag.returnUrl">Return</a></li>
+</ul>
+
+<div>
+    <img src='..\@ViewBag.filename' alt="image" />
+</div>

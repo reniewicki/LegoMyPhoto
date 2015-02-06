@@ -1,0 +1,144 @@
+﻿@model LegoMyPhoto.Models.PhotoPack
+
+@{
+    ViewBag.Title = "Custom";
+}
+
+<script type="text/javascript">
+    function chvlaue(obj) {
+        if (obj.id == "radiok1") {
+            document.getElementById("radiof1").value = "Keep"
+            document.getElementById("radiof1a").innerHTML = "-----------"
+            document.getElementById("radiof2").value = "Keep"
+            document.getElementById("radiof2a").innerHTML = "-----------"
+            document.getElementById("radiof3").value = "Keep"
+            document.getElementById("radiof3a").innerHTML = "------------"
+            document.getElementById("radiof4").value = "Keep"
+            document.getElementById("radiof4a").innerHTML = "------------"
+            document.getElementById("radiof5").value = "Keep"
+            document.getElementById("radiof5a").innerHTML = "------------"
+            document.getElementById("radiof6").value = "Keep"
+            document.getElementById("radiof6a").innerHTML = "------------"
+        }
+        if (obj.id == "radiok2") {
+            document.getElementById("radiof1").value = "720"
+            document.getElementById("radiof1a").innerHTML = "1280x720"
+            document.getElementById("radiof2").value = "800"
+            document.getElementById("radiof2a").innerHTML = "1280x800"
+            document.getElementById("radiof3").value = "900"
+            document.getElementById("radiof3a").innerHTML = "1440x900"
+            document.getElementById("radiof4").value = "1050"
+            document.getElementById("radiof4a").innerHTML = "1680x1050"
+            document.getElementById("radiof5").value = "1080"
+            document.getElementById("radiof5a").innerHTML = "1920x1080"
+            document.getElementById("radiof6").value = "1201"
+            document.getElementById("radiof6a").innerHTML = "1920x1200"
+        }
+        if (obj.id == "radiok3") {
+            document.getElementById("radiof1").value = "480"
+            document.getElementById("radiof1a").innerHTML = "640 x480"
+            document.getElementById("radiof2").value = "600"
+            document.getElementById("radiof2a").innerHTML = "800 x600"
+            document.getElementById("radiof3").value = "768"
+            document.getElementById("radiof3a").innerHTML = "1024 x768"
+            document.getElementById("radiof4").value = "960"
+            document.getElementById("radiof4a").innerHTML = "1280 x960"
+            document.getElementById("radiof5").value = "1024"
+            document.getElementById("radiof5a").innerHTML = "1280 x1024"
+            document.getElementById("radiof6").value = "1200"
+            document.getElementById("radiof6a").innerHTML = "1600 x1200"
+        }
+    }
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <form id="form" method="post">
+            <div class="editor-label">
+                @Html.LabelFor(Model => Model.PhotoName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(Model => Model.PhotoName)
+                @Html.ValidationMessageFor(Model => Model.PhotoName)
+            </div>
+            <p>
+
+                <input type="submit" class="left_submit" value="Lego It!" />
+                <input type="radio" id="lego16" name="legosize" value="16" />
+                <label for="lego16" ><img src='~/Images/Lego16.png' alt="image" /></label>
+                <input type="radio" id="lego24" name="legosize" value="24" />
+                <label for="lego24" ><img src='~/Images/Lego24.png' alt="image" /></label>
+                <input type="radio" id="lego32" name="legosize" value="32" checked="checked" />
+                <label for="lego32" ><img src='~/Images/Lego32.png' alt="image" /></label>
+                <input type="radio" id="lego40" name="legosize" value="40" />
+                <label for="lego40" ><img src='~/Images/Lego40.png' alt="image" /></label>
+                <input type="radio" id="lego48" name="legosize" value="48" />
+                <label for="lego48" ><img src='~/Images/Lego48.png' alt="image" /></label>
+            </p>
+            @Html.HiddenFor(Model => Model.newFileName)
+            <div class="pixel">Select Size</div>
+            <div class="radio1">
+                <input type="radio" id="radiok1" name="SizeType" value="current" checked="checked" onclick="chvlaue(this)" /><label for="radiok1" style="border-bottom-left-radius: 4px; border-top-left-radius: 4px; margin-left: 0;" >Current Size</label>
+                <input type="radio" id="radiok2" name="SizeType" value="wide" onclick="chvlaue(this)" /><label for="radiok2">Wide Screen Wallpaper</label>
+                <input type="radio" id="radiok3" name="SizeType" value="full" onclick="chvlaue(this)" /><label for="radiok3">Full Screen Wallpaper</label>
+                <input type="radio" id="radiof1" name="SelectedSize" value="Keep" checked="checked" /><label id="radiof1a" for="radiof1">-----------</label>
+                <input type="radio" id="radiof2" name="SelectedSize" value="Keep" /><label id="radiof2a" for="radiof2">-----------</label>
+                <input type="radio" id="radiof3" name="SelectedSize" value="Keep" /><label id="radiof3a" for="radiof3">------------</label>
+                <input type="radio" id="radiof4" name="SelectedSize" value="Keep" /><label id="radiof4a" for="radiof4">------------</label>
+                <input type="radio" id="radiof5" name="SelectedSize" value="Keep" /><label id="radiof5a" for="radiof5">------------</label>
+                <input type="radio" id="radiof6" name="SelectedSize" value="Keep" /><label id="radiof6a" style="border-bottom-right-radius: 4px; border-top-right-radius: 4px; margin-right: 0;" for="radiof6">------------</label>
+                
+                @*Full Screen:        Widescreen:      
+                    640 x 480
+                    800 x 600           1280 x 720      
+                    1024 x 768          1280 x 800
+                    1280 x 960          1440 x 900
+                    1280 x 1024         1680 x 1050
+                    1600 x 1200         1920 x 1080
+                                        1920 x 1200*@
+
+                @*Phone:
+                
+                iPhone 4 wallpaper size – 640×960
+                iPhone 5 wallpaper size – 640×1136
+                Samsung/HTC/LG – 480×800
+                Samsung/HTC/LG/Sony – 720×1280
+                HTC/Motorola – 540×960
+                Sony/Motorola – 480×854*@
+
+            </div>
+        </form>
+    </fieldset>
+
+    @*<div id="nav">
+        <input type="radio" id="lego16" name="legosize" value="16" />
+        <label for="lego16" style="display: block; " ><img src='~/Images/Lego16.png' alt="image" /></label>
+        <input type="radio" id="lego24" name="legosize" value="24" />
+        <label for="lego24" style="display: block; "><img src='~/Images/Lego24.png' alt="image" /></label>
+        <input type="radio" id="lego32" name="legosize" value="32" checked="checked" />
+        <label for="lego32" style="display: block; "><img src='~/Images/Lego32.png' alt="image" /></label>
+        <input type="radio" id="lego40" name="legosize" value="40" />
+        <label for="lego40" style="display: block; "><img src='~/Images/Lego40.png' alt="image" /></label>
+        <input type="radio" id="lego48" name="legosize" value="48" />
+        <label for="lego48" style="display: block; "><img src='~/Images/Lego48.png' alt="image" /></label>
+        <input type="radio" id="lego56" name="legosize" value="56" />
+        <label for="lego56"><img src='~/Images/Lego56.png' alt="image" /></label>
+        <input type="radio" id="lego64" name="legosize" value="64" />
+        <label for="lego64"><img src='~/Images/Lego64.png' alt="image" /></label>
+            </div>*@
+
+                <div id="content">
+                    <img src='..\@ViewBag.file' alt="image" />
+                </div>
+
+
+
+
+}
+
+
+
+
+

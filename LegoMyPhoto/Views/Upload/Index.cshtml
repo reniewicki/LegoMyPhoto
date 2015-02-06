@@ -1,0 +1,39 @@
+﻿@model LegoMyPhoto.Models.PhotoPack
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend> Upload Image </legend>
+    <label for="Image">Select a Photo</label>
+    <div class="fileinputs">
+        <input type="file" name="Image" />
+        <br />
+        <input type="submit" class="single_submit" value="Upload New Photo" />
+        <h4>@ViewBag.Error</h4>
+    </div>
+
+    <div>
+        @if (ViewBag.file != null)
+        {
+            
+            <ul class="buttonation" style="margin:2px auto;">
+                <li><a href="/Upload/Custom?file=@Model.newFileName&name=@Model.PhotoName&path=@Model.savedPath&saved=false">Save & Customize</a></li>
+                <li><a href="/Upload/Display?file=@Model.newFileName&name=@Model.PhotoName&path=@Model.savedPath&sized=false&savedFile=false&savedFile=false&legoSize=16">Lego it!</a></li>
+            </ul>
+            <div class="result">
+                <img src='..\@ViewBag.file' alt="image" />
+
+            </div>
+        }
+    </div>
+</fieldset>
+}
+

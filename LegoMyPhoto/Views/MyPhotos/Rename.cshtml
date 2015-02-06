@@ -1,0 +1,31 @@
+﻿@model LegoMyPhoto.Models.SearchPhotoPack
+
+@{
+    ViewBag.Title = "Rename";
+}
+<fieldset>
+    <h2>Rename your photo</h2>
+
+    
+
+</fieldset>
+@using (Html.BeginForm("Rename", "MyPhotos", FormMethod.Post, new { id = "TheForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+        @Html.HiddenFor(model => model.Id)
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhotoName)
+            @Html.ValidationMessageFor(model => model.PhotoName)
+        </div>
+    <div >
+        <input type="submit" class="left_submit" value="Save" />
+        <div class="buttonation" style="margin:0 auto;">
+            <a href="/MyPhotos/@ViewBag.returnUrl" class="right_submit">Return</a>
+        </div>
+    </div>
+    <div>
+        <img src='..\@ViewBag.filename' alt="image" />
+    </div>
+}

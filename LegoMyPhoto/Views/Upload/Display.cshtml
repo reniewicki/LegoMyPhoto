@@ -1,0 +1,19 @@
+﻿@model LegoMyPhoto.Models.SearchPhotoPack
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<h2>@Model.PhotoName</h2>
+<div>
+    <ul class="buttonation" style="margin:0 auto;">
+        <li><a href="/Upload/SaveMe?file=@Model.newFileName&name=@Model.PhotoName">Save</a></li>
+        <li><a href="/Upload/Custom?file=@Model.oldFileName&name=@Model.PhotoName&path=@Model.savedPath&saved=@Model.savedFile">Edit</a></li>
+    </ul>
+</div>
+  
+    <div>
+        <img src='..\@ViewBag.filepath' alt="image" />
+    </div>

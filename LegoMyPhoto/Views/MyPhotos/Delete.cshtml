@@ -1,0 +1,27 @@
+﻿@model LegoMyPhoto.Models.SearchPhotoPack
+
+@{
+    ViewBag.Title = "Delete";
+}
+<fieldset>
+
+
+    <h2>
+        @Html.DisplayFor(model => model.PhotoName)
+    </h2>
+    <h3>Are you sure you want to delete this?</h3>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="submit" class="left_submit" value="Yes, Delete" />
+    <div class="buttonation" style="margin:0 auto;">
+        <a href="/MyPhotos/@ViewBag.returnUrl" class="right_submit" >Return</a>
+    </div>
+    @*@Html.ActionLink("Return", "Index", new {}, new { @class = "button" })*@
+
+    <div>
+        <img src='..\@ViewBag.filename' alt="image" />
+    </div>
+}
+

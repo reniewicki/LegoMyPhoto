@@ -1,0 +1,40 @@
+﻿@model IPagedList<SearchPhotoPack>
+
+<center>
+    <div id="pager" class="pagedList" data-lmp-target="#photoList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+    new PagedListRenderOptions
+    {
+        LinkToFirstPageFormat = "<<",
+        LinkToPreviousPageFormat = "prev",
+        LinkToNextPageFormat = "next",
+        LinkToLastPageFormat = ">>",
+    })
+    </div>
+    <div style="font-size:.75em">
+        @Html.ActionLink("Show All Photos", "ShowAll", "MyPhotos")
+    </div>
+</center>
+
+<div style="clear:both;">
+    @foreach (var itemPhoto in Model)
+    {
+
+        <div style="float:left;width:50%">
+
+            <ul class="buttonation" style="margin:2px auto; margin-left:115px">
+                @if (itemPhoto.Original)
+                { <li><a href="/Upload/Custom?file=@itemPhoto.newFileName&name=@itemPhoto.PhotoName&path=@itemPhoto.savedPath&saved=true">Customize</a></li> }
+                <li><a href="/MyPhotos/Delete?deletedid=@itemPhoto.Id">Delete</a></li>
+                <li><a href="/MyPhotos/Rename?renameId=@itemPhoto.Id">Rename</a></li>
+                @if (!itemPhoto.Original)
+                { <li><a href="/MyPhotos/Download?downloadId=@itemPhoto.Id & returnUrl = Index">Download</a></li> }
+            </ul>
+            <a href="/MyPhotos/Download?downloadId=@itemPhoto.Id&returnUrl=Index">
+                <img src='..\@itemPhoto.savedPath@itemPhoto.newFileName' alt="image" width="450" />
+            </a>
+                <h2>@itemPhoto.PhotoName</h2>
+</div>
+    }
+</div>
+

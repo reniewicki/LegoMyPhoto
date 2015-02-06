@@ -1,0 +1,25 @@
+1. Create Database DONE
+	1. Map all variables DONE
+	2. Map all dependence DONE
+
+1. Login DONE
+
+2. Create access to saved images
+	1. Option to "re-lego" image DONE
+	2. Show users images DONE
+		1. paging for saved images DONE
+	3. Delete DONE
+	4. Customize saved images DONE
+	
+3. Design layout
+	1. Header
+	2. Logo
+	3. Homepage
+	
+4. Impelment cross stitch option
+	1. Create cross stitch watermark
+	2. Create UI
+	
+5. Fix buttons
+	1. Lego buttons
+	2. Customize button DONE

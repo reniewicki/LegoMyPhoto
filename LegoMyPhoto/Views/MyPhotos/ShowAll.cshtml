@@ -1,0 +1,20 @@
+﻿@model IEnumerable<LegoMyPhoto.Models.SearchPhotoPack>
+
+@{
+    ViewBag.Title = "ShowAll";
+}
+
+
+<div style="clear:both;">
+    @foreach (var itemPhoto in Model)
+    {
+
+        <div style="float:left;width:25%">
+
+            <a href="/MyPhotos/Download?downloadId=@itemPhoto.Id&returnUrl=ShowAll">
+
+            <img src='..\@itemPhoto.savedPath@itemPhoto.newFileName' alt="image" width="220" height="140"/>
+            </a>
+        </div>
+    }
+</div>
